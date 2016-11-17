@@ -1,0 +1,5 @@
+= render "partials/main_navigation", locals: { :pages => @pages }
+/ h1.page-title = I18n.t("main_navigation.#{@page.slug}")
+= render partial: 'partials/section_iterator', :locals => { :sections => @sections }
+
+= render "partials/footer_navigation"

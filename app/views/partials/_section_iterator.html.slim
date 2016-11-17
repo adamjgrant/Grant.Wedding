@@ -1,0 +1,30 @@
+p
+  = link_to "Add new section", new_page_section_path(page_id: @page.id) if admin_signed_in?
+- sections.each do |section|
+  div data-component="section" class=section.classname
+    - if section.tag == 'img'
+      = image_tag "//cdn.everything.io/grant.wedding/#{section.path}", class: "float-in-content #{section.classname}"
+    - else
+      - if I18n.locale == :en
+        = section.content.html_safe
+      - else
+        = section.french_content.html_safe
+    p
+      - if admin_signed_in?
+        div(data-component="admin_bar")
+          nav
+            ul
+              li
+                =link_to "Edit above", edit_page_section_path(@page.id, section.id), class: "button", role: "button"
+              li
+                = form_for [@page, section] do |f|
+                  = f.hidden_field :move_position, value: 1
+                  = f.submit "↑ UP", role: "button"
+              li
+                = form_for [@page, section] do |f|
+                  = f.hidden_field :move_position, value: -1
+                  = f.submit "↓ DOWN", role: "button"
+              li
+                = form_for [@page, section] do |f|
+                  = f.hidden_field :archived, value: true
+                  = f.submit "Delete", role: "button"

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adam & Sylviane</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+</head>
+<body
+  data-controller="<%= controller.controller_name %>"
+  data-action="<%= controller.action_name %>"
+  class="<%= SINGLE_LANGUAGE == true ? "single-language" : "" %>"
+>
+  <%= render "partials/language_navigation" %>
+  <div class="wrapper">
+    <%= yield %>
+    <% if admin_signed_in? %>
+      <%= link_to "Admin Log Out", destroy_admin_session_path, method: :delete %>
+    <% end %>
+  </div>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script>
+    $(document).on('ready page:load', function () {
+      $.FroalaEditor.DEFAULTS.key = "mauigB-9E4H-8hjkyE-13u==";
+      $('.froala-editor').froalaEditor();
+    });
+  </script>
+  <script src="https://use.typekit.net/kvp2ire.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+h1.title 
+  = link_to root_path do
+    | Sylviane
+    span.ampersand &
+    | Adam
+= render "partials/main_navigation", locals: { pages: @pages }
+  
+= render "partials/footer_navigation"

@@ -1,0 +1,82 @@
+[data-controller="home"][data-action="index"]
+  background: url('http://cdn.everything.io/grant.wedding/home_mobile3.jpg') no-repeat
+  background-size: 100%
+
+  h1.title
+    position: fixed
+    bottom: 45px
+    left: 0
+    right: 0
+    text-align: center
+
+    @media screen and (min-height: 538px) and (max-width: 345px)
+      top: 130vw
+      bottom: auto
+
+  h1.title, h1.title a
+    color: white
+    font-size: 2.3rem
+
+    +gt($tablet)
+      top: 25px
+      bottom: auto
+      font-size: 4rem
+      text-shadow: 1px 1px 10px rgba(0,0,0,1)
+
+  +gt($tablet)
+    background: url('http://cdn.everything.io/grant.wedding/home.jpg') no-repeat center center fixed
+    background-size: cover
+
+  +c("language_navigation")
+    form input[type="submit"]
+      color: white
+
+    +gt($tablet)
+      background: rgba(0, 0, 0, 0.6)
+
+  +c("main_navigation")
+    +navbar-color(rgba(0,0,0,0.35))
+
+    +gt($tablet)
+      background: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.6))
+      height: 310px
+
+      $bleed: calc(-50vw + 359px)
+      margin:
+        left: $bleed
+        right: $bleed
+
+      padding-top: 105px
+
+    +gt($tablet_landscape)
+      $bleed: -2.7vw
+      margin:
+        left: $bleed
+        right: $bleed
+
+    +gt($desktop)
+      $bleed: calc(-50vw + 487px)
+      margin:
+        left: $bleed
+        right: $bleed
+
+    nav > ul > li > a:not([role=button])
+      color: white
+
+      &:hover, &:active
+        background: transparent
+        border-color: transparent
+        color: #FFFFB7
+
+    input[type="submit"]
+      +button-color(transparent)
+      color: white
+
+  +c("footer_navigation")
+    +navbar-color(transparent)
+    border-top: 0px
+
+    nav > ul > li > a[role=button]
+      +button-color(transparent)
+      color: white
+      padding: 0

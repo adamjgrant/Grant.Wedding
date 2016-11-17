@@ -1,0 +1,17 @@
+[data-controller="pages"][data-action="show"]
+  h1.title, h1.title:first-child
+    margin-bottom: 0
+
+  h1.page-title
+    +heading_sm
+    text-align: center
+
+    +gt($phablet)
+      +heading_rg
+
+    +gt($tablet)
+      font-size: 2.5rem
+      text-align: left
+
+  +c("main_navigation")
+    margin-bottom: $space*4

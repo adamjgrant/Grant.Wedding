@@ -1,0 +1,3 @@
+[submodule "app/assets/javascripts/Uncomment.js"]
+	path = app/assets/javascripts/Uncomment.js
+	url = https://github.com/adamjgrant/Uncomment.js.git

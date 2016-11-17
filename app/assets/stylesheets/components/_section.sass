@@ -1,0 +1,23 @@
++c("section")
+
+// Typography to be shared between rich text editor and section
+[data-component="section"], .fr-box
+  h1, h2, h3, h4, h5
+    font-family: $default-font-family
+
+  h1
+    +heading_sm
+    font-style: italic
+
+  h2, h3, h4, h5, h6
+    +heading_xs
+
+  &.clear
+    clear: both
+    min-height: $space/2
+
+    p
+      display: none
+
+  h1, h2, h3, h4, h5, h6, p
+    max-width: 600px

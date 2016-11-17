@@ -1,0 +1,31 @@
++c('footer_navigation')
+  +navbar($breakpoint: 0px)
+
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  background: white
+  width: 100%
+  margin-bottom: 0
+  z-index: 1
+  border-top: 1px solid $lavender
+
+  nav
+    justify-content: center
+
+    > ul
+      width: 100vw
+      justify-content: space-around
+
+  nav > ul > li > a:not([role=button])
+    font-size: 0.75rem
+    padding:
+      left: 3px
+      right: 3px
+
+  nav > ul > li > a[role=button]
+    +button-size(0.6)
+
+  +gt($tablet)
+    display: none

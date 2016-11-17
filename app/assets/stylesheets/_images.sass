@@ -1,0 +1,102 @@
+.float-in-content
+  display: block
+  max-width: 100%
+  width: 100%
+
+  +gt($phablet)
+    margin-left: $space/2
+    margin-bottom: $space
+    float: right
+    max-width: 50vw
+
+  +gt($tablet)
+    margin-left: $space
+
+  +gt($desktop)
+    max-width: 30vw
+
+.square
+  +column(2)
+  margin-bottom: 10px
+  cursor: pointer
+
+  &.selected
+    border: 8px solid map-get($colors, blue)
+
+img.bleed
+  width: 100vw
+  margin: 25px -$space
+    left: -25px
+  float: none
+  max-width: none
+
+  +gt($tablet)
+    margin: 0px calc(-50vw + 359px)
+
+  +gt($tablet-landscape)
+    margin: 0px -2.5vw
+
+  +gt($desktop)
+    margin: 0px calc(-50vw + 487px)
+
+  +gt($xxl-monitor)
+    width: $xl-monitor
+    margin: 0px calc(-50vw + #{$tablet})
+
+div.gallery-4
+  display: block
+  margin: 0px auto
+  width: 100%
+  clear: both
+
+  +gt($phablet)
+    display: inline-block
+    vertical-align: middle
+    width: calc(50% - #{$space})
+    margin: $space/2
+
+  +gt($tablet)
+    width: auto
+    margin:
+      bottom: 0
+      top: -12.5px
+      right: 0
+    margin-left: calc(-50vw + 359px)
+
+    + div.gallery-4
+      margin:
+        left: 0
+        right: 0
+
+    + div.gallery-4 + div.gallery-4 + div.gallery-4
+      margin-right: calc(-50vw + 335px)
+
+  +gt($tablet-landscape)
+    margin:
+      left: -2.5vw
+      bottom: 0
+      right: 0
+
+    + div.gallery-4 + div.gallery-4 + div.gallery-4
+      margin-right: -5.2vw
+
+  +gt($desktop)
+    margin-left: calc(-50vw + 487px)
+
+    + div.gallery-4 + div.gallery-4 + div.gallery-4
+      margin-right: calc(-50vw + 460px)
+
+  img.gallery-4
+    width: 100%
+    margin-bottom: $space
+
+    +gt($tablet)
+      width: calc(25vw)
+      margin-bottom: 0
+
+  p
+    display: none
+
+  .float-in-content
+    +gt($tablet)
+      margin-left: 0

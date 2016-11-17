@@ -1,0 +1,37 @@
+$imageSizes: 170px, 220px, 290px, 450px, 570px, 640px
+$imageRatio: (1024/683)
+
+.mc-caption
+  display: none
+
+#slider .mcSlc,
+#slider, #sliderFrame, #slider div.sliderInner, #slider img
+  background-size: 100% 100% !important
+
+  @media screen and (max-width: #{$phone - 1})
+    width: nth($imageSizes, 1) * $imageRatio !important
+    height: nth($imageSizes, 1) !important
+
+  +gt($phone)
+    width: nth($imageSizes, 2) * $imageRatio !important
+    height: nth($imageSizes, 2) !important
+
+  +gt($phablet)
+    width: nth($imageSizes, 3) * $imageRatio !important
+    height: nth($imageSizes, 3) !important
+
+  +gt($tablet)
+    width: nth($imageSizes, 4) * $imageRatio !important
+    height: nth($imageSizes, 4) !important
+
+  +gt($tablet-landscape)
+    width: nth($imageSizes, 5) * $imageRatio !important
+    height: nth($imageSizes, 5) !important
+
+  +gt($desktop)
+    width: nth($imageSizes, 6) * $imageRatio !important
+    height: nth($imageSizes, 6) !important
+
+.navBulletsWrapper
+  display: none
+  

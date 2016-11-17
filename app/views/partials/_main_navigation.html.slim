@@ -1,0 +1,7 @@
+div(data-component="main_navigation")
+  nav
+    ul
+      li
+        =link_to "RSVP", "https://www.eventbrite.com/e/mariage-adam-and-sylviane-tickets-19463473774"
+      - @pages.each do |page|
+        li =link_to_unless_current I18n.t("main_navigation.#{page.slug}"), send("#{page.slug}_path")

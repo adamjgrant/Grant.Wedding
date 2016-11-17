@@ -1,0 +1,46 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: "exmouthregular";
+  font-weight: normal;
+}
+
+p {
+  color: $olive
+}
+
+@font-face {
+    font-family: 'exmouthregular';
+    src: font-url('exmouth_-webfont.eot');
+    src: font-url('exmouth_-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('exmouth_-webfont.woff2') format('woff2'),
+         font-url('exmouth_-webfont.woff') format('woff'),
+         font-url('exmouth_-webfont.ttf') format('truetype'),
+         font-url('exmouth_-webfont.svg#exmouthregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1.title, h1.title a, h1.title {
+  @include heading_xl;
+  color: $lavender;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover { text-decoration: none; }
+  &:first-child { margin-top: $space/3; }
+
+  @include gt($tablet) {
+    @include heading_xxl;
+
+    &:first-child { margin-top: $space; }
+
+  }
+
+  .ampersand {
+    font-size: 4rem;
+    line-height: 0rem;
+    letter-spacing: 0px;
+    margin-right: -10px;
+  }
+}
+
+a { color: $lavender; }

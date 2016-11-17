@@ -1,0 +1,13 @@
+div(data-component="language_navigation")
+  nav(style="#{ "visibility: hidden" if SINGLE_LANGUAGE == true }")
+    ul
+      li
+        = form_tag '/set_language' do
+          = hidden_field_tag :language, "fr"
+          = submit_tag "", class: "french mobile"
+          = submit_tag "Français", class: "french desktop"
+      li
+        = form_tag '/set_language' do
+          = hidden_field_tag :language, "en"
+          = submit_tag "", class: "english mobile"
+          = submit_tag "English", class: "english desktop"

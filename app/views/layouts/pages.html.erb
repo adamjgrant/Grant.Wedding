@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sylviane & Adam</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+</head>
+<body data-controller="<%= controller.controller_name %>" data-action="<%= controller.action_name %>">
+  <%= render "partials/language_navigation" %>
+  <div class="wrapper">
+    <h1 class="title">
+      <%= link_to "Sylviane & Adam", root_path %>
+    </h1>
+
+    <%= yield %>
+    <% if admin_signed_in? %>
+      <%= link_to "Admin Log Out", destroy_admin_session_path, method: :delete %>
+    <% end %>
+  </div>
+  <%= render "partials/footer" %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="https://use.typekit.net/kvp2ire.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+</body>
+</html>
